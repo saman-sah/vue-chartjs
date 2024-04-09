@@ -1,0 +1,41 @@
+<template>
+    <div class="w-[50%] min-w-[400px] h-[400px]" >
+      <canvas
+        ref="myChart10" 
+        id="myChart10"
+        width="20" 
+        height="10"
+      >
+      </canvas>
+    </div>
+</template>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+import Chart from 'chart.js/auto';
+
+const myChart10 = ref(null)
+
+onMounted(() => {
+  new Chart(myChart10.value, {
+    type: 'line',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1,
+        borderColor: '#FF6384',
+        backgroundColor: '#FFB1C1',
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+})
+</script>
