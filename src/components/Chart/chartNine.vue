@@ -18,15 +18,25 @@ const myChart9 = ref(null)
 
 onMounted(() => {
   new Chart(myChart9.value, {
-    type: 'line',
+    type: 'polarArea',
     data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      labels: [
+        'Red',
+        'Green',
+        'Yellow',
+        'Grey',
+        'Blue'
+      ],
       datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1,
-        borderColor: '#FF6384',
-        backgroundColor: '#FFB1C1',
+        label: 'My First Dataset',
+        data: [16, 11, 7, 3, 14],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(75, 192, 192)',
+          'rgb(255, 205, 86)',
+          'rgb(201, 203, 207)',
+          'rgb(54, 162, 235)'
+        ]
       }]
     },
     options: {

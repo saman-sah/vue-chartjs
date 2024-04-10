@@ -21,20 +21,21 @@ onMounted(() => {
     type: 'line',
     data: {
       labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-      datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1,
-        borderColor: '#FF6384',
-        backgroundColor: '#FFB1C1',
-      }]
+      datasets: [
+            {fill: 'origin'},      // 0: fill to 'origin'
+            {fill: '+2'},          // 1: fill to dataset 3
+            {fill: 1},             // 2: fill to dataset 1
+            {fill: false},         // 3: no fill
+            {fill: '-2'},          // 4: fill to dataset 2
+            {fill: {value: 25}}    // 5: fill to axis value 25
+        ]
     },
     options: {
-      scales: {
-        y: {
-          beginAtZero: true
+        plugins: {
+            filler: {
+                propagate: true
+            }
         }
-      }
     }
   });
 })

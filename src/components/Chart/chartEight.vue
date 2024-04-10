@@ -20,14 +20,18 @@ onMounted(() => {
   new Chart(myChart8.value, {
     type: 'line',
     data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-      datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1,
-        borderColor: '#FF6384',
-        backgroundColor: '#FFB1C1',
-      }]
+        datasets: [{
+            type: 'bar',
+            label: 'Bar Dataset',
+            data: [10, 40, 20, 50],
+            order: 2
+        }, {
+            type: 'line',
+            label: 'Line Dataset',
+            data: [10, 40, 20, 50],
+            order: 1
+        }],
+        labels: ['January', 'February', 'March', 'April']
     },
     options: {
       scales: {
